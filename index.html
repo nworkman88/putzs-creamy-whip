@@ -20,10 +20,12 @@
 </head>
 <body>
     <!--Navigation-->
-    <nav class="navbar navbar-expand-sm navbar-light sticky-top">
+    <nav class="navbar navbar-expand-md navbar-light sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="images/putz_logo_md_plus.png" alt="Putz's Creamy Whip logo">
+                <img class="d-block d-lg-none" src="images/putz_logo_sm_plus.png" alt="Putz's Creamy Whip logo">
+                <img class="d-none d-lg-block" src="images/putz_logo_lg_plus.png" alt="Putz's Creamy Whip logo">
+                
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nucampNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -44,6 +46,7 @@
             </div>
         </div>
     </nav>
+    
     <!--Carousel-->
     <div class="row row-content">
         <div class="col">
@@ -55,7 +58,11 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-none d-md-block d-lg-none w-100" src="images/putz_slider_1_md.jpg" alt="named among the most satisfying soft serve spots in america">
+                        <img class="d-none d-sm-block d-md-none w-100" src="images/putz_slider_1_sm.jpg" alt="named a
+                        mong the most satisfying soft serve spots in america">
+                        <img class="d-none d-md-block d-lg-none w-100" src="images/putz_slider_1_md.jpg" alt="named a
+                        mong the most satisfying soft serve spots in america">
+                        <img class="d-none d-lg-block d-xl-none w-100" src="images/putz_slider_1_l.jpg" alt="named among the most satisfying soft serve spots in america">
                         <img class="d-none d-xl-block w-100" src="images/putz_slider_1_xl.jpg" alt="named among the most satisfying soft serve spots in america">
                     </div>
                     <div class="carousel-item">
@@ -88,10 +95,10 @@
     <!-- Content Block -->
     <div class="container">
         <div class="row row-content">
-            <div class="col-12 col-md-4">
-                <img id="old-photos" src="images/old_photos.png" alt="historic putz pics">
+            <div class="col-12 col-lg-4">
+                <img class="d-flex" id="old-photos" src="images/old_photos.png" alt="historic putz pics">
             </div>
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-lg-8" id="home-first-content-blk">
                 <h1>A <span id="sacramento-cincy">Cincinnati</span> Staple Since 1938</h1>
                 <p>Putz's has a rich tradition on the West Side of Cincinnati, as the family-owned business has been around <strong> since 1938</strong>. The walk-up ice-cream joint is located in an out-of-the-way spot near I-74 and Montana Avenue. But families flock to Putz's every summer because of their creamy ice cream, sundaes, milkshakes and more. The stand also serves burgers, hot dogs and coneys.</p>
                 <button class="btn btn-danger">
@@ -163,13 +170,15 @@
             </div>
         </div>
     </div>
+
+    <!--Footer-->
     <footer class="site-footer">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <img src="images/putz_footer_logo.png" id = "footer-logo" alt="Putz's Creamy Whip">
                     <p></p>
-                    <p>&copy;2021 Putz's Creamy Whip <br /></p>
+                    <p>&copy;2021 Putz's Creamy Whip</p>
                 </div>
             </div>
         </div>
