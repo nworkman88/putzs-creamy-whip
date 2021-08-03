@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Required meta tags always come first -->
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+ 
+     <!-- Additional CSS must be placed after Bootstrap CSS -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Sacramento&display=swap" rel="stylesheet"> 
+     <link rel="stylesheet" href="css/styles.css" />
+     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+ 
+    <title>Putz's Creamy Whip</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-md navbar-light sticky-top">
+        <div class="container" id="navbarContainer">
+            <a class="navbar-brand" href="#">
+                <img class="d-block d-lg-none" src="images/putz_logo_sm_plus.png" alt="Putz's Creamy Whip logo">
+                <img class="d-none d-lg-block" src="images/putz_logo_lg_plus.png" alt="Putz's Creamy Whip logo">
+                
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nucampNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nucampNavbar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active"><a class="nav-link" href="index.html">
+                        Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">
+                        Our Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Order Online</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Order Form-->
+    <div class="container">
+        <div class="row row-content">
+            <div class="col-12">
+                <h1>Order Ahead! <span class="label label-important">Click Here for Our Menu</span>
+                </h1>
+                <hr>
+            </div>
+            <div class="col-12">
+                <form action="">
+                    <div class="form-group row">
+                        <label for="firstName" class="col-md-2 col-form-label">First Name:</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" id="firstName" name="firstName" placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="lastName" class="col-md-2 col-form-label">Last Name:</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="areaCode" class="col-md-2 col-form-label">Phone:</label>
+                        <div class="col-5 col-md-3">
+                            <input class="form-control" type="tel" id="areaCode" name="areaCode" placeholder="Area Code">
+                        </div>
+                        <div class="col-7">
+                            <input class="form-control" type="tel" id="telNum" name="telNum" placeholder="Tel. number">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-md-2 col-form-label">Email:</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="email" id="email" name="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col offset-md-2">
+                            <label for="phone"><strong>Preferred Contact Method:</strong></label>
+                            <div class="form-check form-check-inline offset-md-1">
+                                <input class="form-check-input" type="radio" id="contactYes" name="contactRadios" value="phone">
+                                <label for="phone" class="form-check-label">Phone</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="contactNo" name="contactRadios" value="email">
+                                <label for="email" class="form-check-label">Email</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row row-content">
+            <div class="col-12">
+                <div class="accordion" id="accordionExample">
+                    <div class="orderCard card">
+                      <div class="card-header">
+                        <h2>
+                          <button class="orderCollapseBtn btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="iceCream">
+                            Ice Cream Cones
+                            <i class="fa fa-angle-down rotate-icon"></i>
+                          </button>
+                        </h2>
+                      </div>
+                      <div id="collapseOne" class="collapse show" aria-labelledby="iceCream" data-parent="#accordionExample">
+                        <div class="card-body">
+                          <div class="col-12">
+                                <form action="">
+                                    <div class="form-group row">
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <label for="coneSmall" class="orderFormAccLabels col-form-label col-12">Size</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="coneSmall" name="coneSizeRadios" value="small cone">
+                                                <label for="coneSmall" class="form-check-label">Small ($2.00)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="coneMedium" name="coneSizeRadios" value="medium cone">
+                                                <label for="coneMedium" class="form-check-label">Medium ($2.50)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="coneLarge" name="coneSizeRadios" value="large cone">
+                                                <label for="coneLarge" class="form-check-label">Large ($3.00)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="waffleReg" name="coneSizeRadios" value="medium cone">
+                                                <label for="waffleReg" class="form-check-label">Regular Waffle ($3.20)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="waffleLarge" name="coneSizeRadios" value="large cone">
+                                                <label for="waffleLarge" class="form-check-label">Large Waffle ($3.80)</label>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="coneQty" class="col-6 col-form-label">Qty:</label>
+                                                <div class="col-6">
+                                                    <input class="form-control" type="text" id="coneQty" name="firstName" placeholder="0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <label for="coneChoc" class="orderFormAccLabels col-form-label col-12">Flavor</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="coneChoc" name="coneFlavorRadios" value="chocolate cone">
+                                                <label for="coneChoc" class="form-check-label">Chocolate</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="coneVanilla" name="coneFlavorRadios" value="vanilla cone">
+                                                <label for="coneVanilla" class="form-check-label">Vanilla</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="coneTwist" name="coneFlavorRadios" value="twist cone">
+                                                <label for="coneTwist" class="form-check-label">Chocolate/Vanilla Twist</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="coneBlueRas" name="coneFlavorRadios" value="blue raspberry cone">
+                                                <label for="coneBlueRas" class="form-check-label">Blue Raspberry</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="waffleLarge" name="coneFlavorRadios" value="flavor of the week cone">
+                                                <label for="phone" class="form-check-label">Flavor of the Week (Check social media for updates!)</label>
+                                            </div>
+                                        </div>
+                                        <div class="col col-lg-4 d-none d-lg-block">
+                                            <img src="images/putz-blue-softserve.jpg" alt="blue soft serve" class="img-thumbnail">
+                                        </div>
+                                    </div>
+                                </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="orderCard card">
+                      <div class="card-header">
+                        <h2 class="mb-0">
+                          <button class="orderCollapseBtn btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Collapsible Group Item #2
+                          </button>
+                        </h2>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                          Some placeholder content for the second accordion panel. This panel is hidden by default.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="orderCard card">
+                      <div class="card-header">
+                        <h2 class="mb-0">
+                          <button class="orderCollapseBtn btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Collapsible Group Item #3
+                          </button>
+                        </h2>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                          And lastly, the placeholder content for the third and final accordion panel. This panel is hidden by default.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="site-footer">
+        <div class="container" id="footerContainer">
+            <div class="row">
+                <div class="col">
+                    <img src="images/putz_footer_logo.png" id = "footer-logo" alt="Putz's Creamy Whip">
+                    <p></p>
+                    <p>&copy;2021 Putz's Creamy Whip</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        })
+    </script>
+</body>
+</html>

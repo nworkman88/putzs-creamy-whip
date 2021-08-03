@@ -15,6 +15,12 @@
         left: -10px;
     }
 }
+@media (max-width: 992px) {
+    #navbarContainer {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
 
 nav {
     box-shadow: 0 0 10px #ccc;
@@ -39,7 +45,7 @@ h1 {
     text-transform: uppercase;
     /*text-shadow: 2px 2px 7px #999;*/
 }
-h3, h4 {
+h2, h3, h4 {
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     color: #075C91;
@@ -71,6 +77,10 @@ blockquote > p:last-child {
     padding-top: 50px;
     padding-bottom: 50px;
 }
+#carouselCol {
+    padding-left: 0;
+    padding-right: 0;
+}
 #sacramento-cincy {
     font-family: "Sacramento", script;
     font-size: 70px;
@@ -95,15 +105,16 @@ blockquote > p:last-child {
         display: inline-block;
     }
 }
-.card {
+.homeCard {
     transition: 0.7s;
     border-radius: 0;
+    padding: 0;
 }
-.card:hover {
+.homeCard:hover {
     box-shadow: 0 0 20px #777;
     transform: scale(1.1);
 }
-.card-img-top {
+.homeCard-img-top {
     border-radius: 0;
 }
 
@@ -192,4 +203,36 @@ footer p {
     text-shadow: 3px 3px 10px #000;
     text-transform: none;
     font-size: 72pt;
+}
+.orderCard {
+    border: none;}
+.orderCard .card-header {
+    background: none;
+    border-bottom: 1px solid black;
+}
+.orderCollapseBtn {
+    font-size: 28px;
+    color: #075C91;
+    padding: 0;
+}
+.orderCard .card-header {
+    padding: 0;
+}
+.orderCollapseBtn i {
+    float: right;
+}
+.orderFormAccLabels {
+    padding-left: 0;
+    font-weight: bold;
+}
+/* .form-check-label {
+    display: inline-block;
+    padding-bottom: 10px;
+} */
+form {
+    font-family: "Montserrat", sans-serif;
+}
+#footerContainer {
+    padding-top: 50px;
+    padding-bottom: 10px;
 }
