@@ -205,10 +205,13 @@ footer p {
     font-size: 72pt;
 }
 .orderCard {
-    border: none;}
+    border: none;
+}
 .orderCard .card-header {
     background: none;
-    border-bottom: 1px solid black;
+}
+.orderCard .card-header h2 {
+    border-bottom: 1px solid #ddd;
 }
 .orderCollapseBtn {
     font-size: 28px;
@@ -225,14 +228,26 @@ footer p {
     padding-left: 0;
     font-weight: bold;
 }
-/* .form-check-label {
-    display: inline-block;
-    padding-bottom: 10px;
-} */
+.form-check {
+    padding-bottom: 8px;
+}
 form {
     font-family: "Montserrat", sans-serif;
 }
 #footerContainer {
     padding-top: 50px;
     padding-bottom: 10px;
+}
+
+input[type=text], input[type=tel], input[type=email] {
+    border-radius: 0;
+    box-shadow: inset 0 0 10px #ddd;
+}
+@media (min-width: 998px) {
+    #orderFormContainer {
+        padding-top: 100px;
+    }
+}
+#submitButton {
+    margin-top: 30px;
 }
