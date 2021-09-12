@@ -112,67 +112,117 @@
                         </h2>
                       </div>
                       <div id="collapseOne" class="collapse show" aria-labelledby="iceCream" data-parent="#accordionExample">
-                        <div class="card-body">
+                        <div class="card-body order-form-card-body">
                           <div class="col-12">
                                 <form action="">
                                     <div class="form-group row">
-                                        <div class="col-12 col-md-6 col-lg-4">
-                                            <label for="shakeSmall" class="orderFormAccLabels col-form-label col-12">Size</label>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="coneSmall" name="coneSizeRadios" value="small cone">
-                                                <label for="coneSmall" class="form-check-label">Small ($2.00)</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="coneMedium" name="coneSizeRadios" value="medium cone">
-                                                <label for="coneMedium" class="form-check-label">Medium ($2.50)</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="coneLarge" name="coneSizeRadios" value="large cone">
-                                                <label for="coneLarge" class="form-check-label">Large ($3.00)</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="waffleReg" name="coneSizeRadios" value="medium cone">
-                                                <label for="waffleReg" class="form-check-label">Regular Waffle ($3.20)</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="waffleLarge" name="coneSizeRadios" value="large cone">
-                                                <label for="waffleLarge" class="form-check-label">Large Waffle ($3.80)</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-4">
-                                            <label for="coneChoc" class="orderFormAccLabels col-form-label col-12">Flavor</label>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="coneChoc" name="coneFlavorRadios" value="chocolate cone">
-                                                <label for="coneChoc" class="form-check-label">Chocolate</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="coneVanilla" name="coneFlavorRadios" value="vanilla cone">
-                                                <label for="coneVanilla" class="form-check-label">Vanilla</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="coneTwist" name="coneFlavorRadios" value="twist cone">
-                                                <label for="coneTwist" class="form-check-label">Chocolate/Vanilla Twist</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="coneBlueRas" name="coneFlavorRadios" value="blue raspberry cone">
-                                                <label for="coneBlueRas" class="form-check-label">Blue Raspberry</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="flavOfWeek" name="coneFlavorRadios" value="flavor of the week cone">
-                                                <label for="flavOfWeek" class="form-check-label">Flavor of the Week (Check social media for updates!)</label>
-                                            </div>
+                                        <div class="col-12 col-lg-8 order-form-table">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Size:</th>
+                                                        <th>Price:</th>
+                                                        <th>Flavor:</th>
+                                                        <th>Qty:</th>
+                                                        <th>Subtotal:</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="align-middle">Small Cone</td>
+                                                        <td class="align-middle">$2.00</td>
+                                                        <td>
+                                                            <select class="custom-select" name="coneFlavorsSm" id="coneFlavorSm" onchange="updateTotal()">
+                                                                <option value="Pick a Flavor">Pick a flavor...</option>
+                                                                <option value="Vanilla">Vanilla</option>
+                                                                <option value="Chocolate">Chocolate</option>
+                                                                <option value="Chocolate/Vanilla Twist">Chocolate/Vanilla Twist</option>
+                                                                <option value="Blue Raspberry">Blue Raspberry</option>
+                                                                <option value="Flavor of the Week">Flavor of the Week</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <input id="smConeQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td id="smConeSubtotal" class="align-middle" onchange="updateOrderSubtotal()">$0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-middle">Medium Cone</td>
+                                                        <td class="align-middle">$2.50</td>
+                                                        <td>
+                                                            <select class="custom-select" name="coneFlavorsMd" id="coneFlavorMd" onchange="updateTotal()">
+                                                                <option value="Pick a Flavor">Pick a flavor...</option>
+                                                                <option value="Vanilla">Vanilla</option>
+                                                                <option value="Chocolate">Chocolate</option>
+                                                                <option value="Chocolate/Vanilla Twist">Chocolate/Vanilla Twist</option>
+                                                                <option value="Blue Raspberry">Blue Raspberry</option>
+                                                                <option value="Flavor of the Week">Flavor of the Week</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <input id="mdConeQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td id="mdConeSubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-middle">Large Cone</td>
+                                                        <td class="align-middle">$3.00</td>
+                                                        <td>
+                                                            <select class="custom-select" name="coneFlavorsMd" id="coneFlavorSm" onchange="updateTotal()">
+                                                                <option value="Pick a Flavor">Pick a flavor...</option>
+                                                                <option value="Vanilla">Vanilla</option>
+                                                                <option value="Chocolate">Chocolate</option>
+                                                                <option value="Chocolate/Vanilla Twist">Chocolate/Vanilla Twist</option>
+                                                                <option value="Blue Raspberry">Blue Raspberry</option>
+                                                                <option value="Flavor of the Week">Flavor of the Week</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <input id="lgConeQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td id="lgConeSubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-middle">Regular Waffle Cone</td>
+                                                        <td class="align-middle">$3.20</td>
+                                                        <td>
+                                                            <select class="custom-select" name="coneFlavorsMd" id="coneFlavorSm">
+                                                                <option value="Pick a Flavor">Pick a flavor...</option>
+                                                                <option value="Vanilla">Vanilla</option>
+                                                                <option value="Chocolate">Chocolate</option>
+                                                                <option value="Chocolate/Vanilla Twist">Chocolate/Vanilla Twist</option>
+                                                                <option value="Blue Raspberry">Blue Raspberry</option>
+                                                                <option value="Flavor of the Week">Flavor of the Week</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <input id="rgWafConeQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td id="rgWafConeSubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-middle">Large Waffle Cone</td>
+                                                        <td class="align-middle">$3.80</td>
+                                                        <td>
+                                                            <select class="custom-select" name="coneFlavorsMd" id="coneFlavorSm">
+                                                                <option value="Pick a Flavor">Pick a flavor...</option>
+                                                                <option value="Vanilla">Vanilla</option>
+                                                                <option value="Chocolate">Chocolate</option>
+                                                                <option value="Chocolate/Vanilla Twist">Chocolate/Vanilla Twist</option>
+                                                                <option value="Blue Raspberry">Blue Raspberry</option>
+                                                                <option value="Flavor of the Week">Flavor of the Week</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <input id="lgWafConeQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td id="lgWafConeSubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                         <div class="col col-lg-4 d-none d-lg-block">
                                             <img src="images/putz-blue-softserve.jpg" alt="blue soft serve" class="img-thumbnail">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="coneQty" class="col-2 col-lg-1 col-form-label">Qty:</label>
-                                        <div class="col-4 col-lg-1">
-                                            <input class="form-control" type="text" id="coneQty" name="coneQty" placeholder="0">
-                                        </div>
-                                        <div class="col-6 offset-lg-2">
-                                            <button class="btn btn-danger">Add to order</button>
                                         </div>
                                     </div>
                                 </form>
@@ -190,89 +240,257 @@
                             </h2>
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="shakesAndMalts" data-parent="#accordionExample">
-                            <div class="card-body">
+                            <div class="card-body order-form-card-body">
                                 <div class="col-12">
                                     <form action="">
                                         <div class="form-group row">
-                                            <div class="col-12 col-md-6 col-lg-4">
-                                                <label for="shakeSmall" class="orderFormAccLabels col-form-label col-12">Size</label>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="shakeSmall" name="shakeSizeRadios" value="small shake">
-                                                    <label for="shakeSmall" class="form-check-label">Small - 16oz ($3.00)</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="shakeMedium" name="shakeSizeRadios" value="medium shake">
-                                                    <label for="shakeMedium" class="form-check-label">Medium - 20oz ($3.50)</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="shakeLarge" name="shakeSizeRadios" value="large shake">
-                                                    <label for="shakeLarge" class="form-check-label">Large - 32oz ($5.00)</label>
-                                                </div>
-                                                <label for="shakeChoc" class="orderFormAccLabels col-form-label col-12">Flavor</label>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="shakeChoc" name="shakeFlavorRadios" value="chocolate shake">
-                                                    <label for="shakeChoc" class="form-check-label">Chocolate Shake</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="shakeVanilla" name="shakeFlavorRadios" value="vanilla shake">
-                                                    <label for="shakeVanilla" class="form-check-label">Vanilla Shake</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="chocMalt" name="shakeFlavorRadios" value="choc malt">
-                                                    <label for="shakeTwist" class="form-check-label">Chocolate Malt</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="vanillaMalt" name="shakeFlavorRadios" value="vanilla malt">
-                                                    <label for="vanillaMalt" class="form-check-label">Vanilla Malt</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="rootBeerFloat" name="shakeFlavorRadios" value="root beer float">
-                                                    <label for="rootBeerFloat" class="form-check-label">Root Beer Float</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" id="creamsicleFloat" name="shakeFlavorRadios" value="creamsicle float">
-                                                    <label for="creamsicleFloat" class="form-check-label">Creamsicle Float</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-md-6 col-lg-4">
-                                                <label for="extraThickSmMd" class="orderFormAccLabels col-form-label col-12">Add-Ons</label>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="extraThickSmMd" name="addOnCheckboxes" value="extra thick">
-                                                    <label for="shakeSmall" class="form-check-label">Extra Thick (Small/Medium) (+ $0.60)</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="extraThickLg" name="addOnCheckboxes" value="extra thick">
-                                                    <label for="extraThickLg" class="form-check-label">Extra Thick (Large) (+ $1.20)</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="extraMaltSmMd" name="addOnCheckboxes" value="extra malt">
-                                                    <label for="extraMaltSmMd" class="form-check-label">Extra Malt (Small/Medium) (+ $0.50)</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="extraMaltLg" name="addOnCheckboxes" value="extra malt">
-                                                    <label for="extraMaltLg" class="form-check-label">Extra Malt (Large) (+ $1.00)</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="extraFlavorSmMd" name="addOnCheckboxes" value="extra flavor">
-                                                    <label for="extraFlavorSmMd" class="form-check-label">Extra Flavor (Small/Medium) (+ $0.50)</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="extraFlavorLg" name="addOnCheckboxes" value="extra flavor">
-                                                    <label for="extraFlavorLg" class="form-check-label">Extra Flavor (Large) (+ $1.00)</label>
-                                                </div>
-                                        
+                                            <div class="col-12 col-lg-8 order-form-table">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Size:</th>
+                                                            <th>Price:</th>
+                                                            <th>Flavor:</th>
+                                                            <th id="qty-col">Qty:</th>
+                                                            <th>Add-ons:</th>
+                                                            <th>Subtotal:</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="table-primary">
+                                                            <td colspan="6" class="">Shakes</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-middle">Small Shake</td>
+                                                            <td class="align-middle">$3.00</td>
+                                                            <td>
+                                                                <select class="custom-select" name="shakeFlavorsSm" id="shakeFlavorSm">
+                                                                    <option value="Pick a Flavor">Pick a flavor...</option>
+                                                                    <option value="Vanilla">Vanilla</option>
+                                                                    <option value="Chocolate">Chocolate</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <input id="smShakeQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                            </td>
+                                                            <td>
+                                                                <select class="custom-select" name="shakeAddOnsSm" id="shakeAddOnsSm" onchange="updateTotal()">
+                                                                    <option id="addOnsSmShk" value="0">Optional Add-ons</option>
+                                                                    <option id="xThickSmShk" value="0.6">Extra Thick ($0.60)</option>
+                                                                    <option id="xFlavorSmShk" value="0.5">Extra Flavor ($0.50)</option>
+                                                                    <option  id="xTkXFlSmShk" value="1.1">Extra Thick + Extra Flavor ($1.10)</option>
+                                                                </select>
+                                                            </td>
+                                                            <td id="smShakeSubtotal" class="align-middle">$0.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-middle">Medium Shake</td>
+                                                            <td class="align-middle">$3.50</td>
+                                                            <td>
+                                                                <select class="custom-select" name="shakeFlavorsMd" id="shakeFlavorMd">
+                                                                    <option value="Pick a Flavor">Pick a flavor...</option>
+                                                                    <option value="Vanilla">Vanilla</option>
+                                                                    <option value="Chocolate">Chocolate</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <input id="mdShakeQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                            </td>
+                                                            <td>
+                                                                <select class="custom-select" name="shakeAddOnsMd" id="shakeAddOnsMd" onchange="updateTotal()">
+                                                                    <option id="addOnsMdShk" value="0">Optional Add-ons</option>
+                                                                    <option id="xThickMd" value="0.6">Extra Thick ($0.60)</option>
+                                                                    <option id="xFlavorMd" value="0.5">Extra Flavor ($0.50)</option>
+                                                                    <option  id="xTkXFlMd" value="1.1">Extra Thick + Extra Flavor ($1.10)</option>
+                                                                </select>
+                                                            </td>
+                                                            <td id="mdShakeSubtotal" class="align-middle">$0.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-middle">Large Shake</td>
+                                                            <td class="align-middle">$5.00</td>
+                                                            <td>
+                                                                <select class="custom-select" name="shakeFlavorsLg" id="shakeFlavorLg" onchange="updateTotal()">
+                                                                    <option value="Pick a Flavor">Pick a flavor...</option>
+                                                                    <option value="Vanilla">Vanilla</option>
+                                                                    <option value="Chocolate">Chocolate</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <input id="lgShakeQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                            </td>
+                                                            <td>
+                                                                <select class="custom-select" name="shakeAddOnsLg" id="shakeAddOnsLg" onchange="updateTotal()">
+                                                                    <option id="addOnsLgShk" value="0">Optional Add-ons</option>
+                                                                    <option id="xThickLg" value="1.2">Extra Thick ($1.20)</option>
+                                                                    <option id="xFlavorLg" value="1.0">Extra Flavor ($1.00)</option>
+                                                                    <option  id="xTkXFlLg" value="2.2">Extra Thick + Extra Flavor ($2.20)</option>
+                                                                </select>
+                                                            </td>
+                                                            <td id="lgShakeSubtotal" class="align-middle">$0.00</td>
+                                                        </tr>
+                                                        <tr class="table-primary">
+                                                            <td colspan="6" class="">Malt</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-middle">Small Malt</td>
+                                                            <td class="align-middle">$3.00</td>
+                                                            <td>
+                                                                <select class="custom-select" name="maltFlavorsSm" id="maltFlavorsSm" onchange="updateTotal()">
+                                                                    <option value="Pick a Flavor">Pick a flavor...</option>
+                                                                    <option value="Vanilla">Vanilla</option>
+                                                                    <option value="Chocolate">Chocolate</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <input id="smMaltQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                            </td>
+                                                            <td>
+                                                                <select class="custom-select" name="maltAddOnsSm" id="maltAddOnsSm" onchange="updateTotal()">
+                                                                    <option id="addOnsSmMlt" value="0">Optional Add-ons</option>
+                                                                    <option id="xThickSmMlt" value="0.6">Extra Thick ($0.60)</option>
+                                                                    <option id="xFlavorSmMlt" value="0.5">Extra Flavor ($0.50)</option>
+                                                                    <option id="xFlavorSmMlt" value="0.5">Extra Malt ($0.50)</option>
+                                                                    <option  id="xTkXFlSmMlt" value="1.1">Extra Thick + Extra Flavor ($1.10)</option>
+                                                                    <option  id="xTkXMlSmMlt" value="1.1">Extra Thick + Extra Malt ($1.10)</option>
+                                                                </select>
+                                                            </td>
+                                                            <td id="smMaltSubtotal" class="align-middle">$0.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-middle">Medium Malt</td>
+                                                            <td class="align-middle">$3.50</td>
+                                                            <td>
+                                                                <select class="custom-select" name="maltFlavorsMd" id="maltFlavorMd" onchange="updateTotal()">
+                                                                    <option value="Pick a Flavor">Pick a flavor...</option>
+                                                                    <option value="Vanilla">Vanilla</option>
+                                                                    <option value="Chocolate">Chocolate</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <input id="mdMaltQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                            </td>
+                                                            <td>
+                                                                <select class="custom-select" name="maltAddOnsMd" id="maltAddOnsMd" onchange="updateTotal()">
+                                                                    <option id="addOnsMdMlt" value="0">Optional Add-ons</option>
+                                                                    <option id="xThickMdMlt" value="0.6">Extra Thick ($0.60)</option>
+                                                                    <option id="xFlavorMdMlt" value="0.5">Extra Flavor ($0.50)</option>
+                                                                    <option id="xFlavorMdMlt" value="0.5">Extra Malt ($0.50)</option>
+                                                                    <option  id="xTkXFlMdMlt" value="1.1">Extra Thick + Extra Flavor ($1.10)</option>
+                                                                    <option  id="xTkXMlMdMlt" value="1.1">Extra Thick + Extra Malt ($1.10)</option>
+                                                                </select>
+                                                            </td>
+                                                            <td id="mdMaltSubtotal" class="align-middle">$0.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-middle">Large Malt</td>
+                                                            <td class="align-middle">$5.00</td>
+                                                            <td>
+                                                                <select class="custom-select" name="maltFlavorsLg" id="maltFlavorLg" onchange="updateTotal()">
+                                                                    <option value="Pick a Flavor">Pick a flavor...</option>
+                                                                    <option value="Vanilla">Vanilla</option>
+                                                                    <option value="Chocolate">Chocolate</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <input id="lgMaltQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                            </td>
+                                                            <td>
+                                                                <select class="custom-select" name="maltAddOnsLg" id="maltAddOnsLg" onchange="updateTotal()">
+                                                                    <option id="addOnsLgMlt" value="0">Optional Add-ons</option>
+                                                                    <option id="xThickLgMlt" value="1.2">Extra Thick ($1.20)</option>
+                                                                    <option id="xFlavorLgMlt" value="1">Extra Flavor ($1.00)</option>
+                                                                    <option id="xFlavorLgMlt" value="1">Extra Malt ($1.00)</option>
+                                                                    <option  id="xTkXFlLgMlt" value="2.2">Extra Thick + Extra Flavor ($2.20)</option>
+                                                                    <option  id="xTkXMlLgMlt" value="2.2">Extra Thick + Extra Malt ($2.20)</option>
+                                                                </select>
+                                                            </td>
+                                                            <td id="lgMaltSubtotal" class="align-middle">$0.00</td>
+                                                        </tr>
+                                                        <tr class="table-primary">
+                                                            <td colspan="6" class="">Floats</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-middle">Small Float</td>
+                                                            <td class="align-middle">$3.00</td>
+                                                            <td>
+                                                                <select class="custom-select" name="floatFlavorsSm" id="floatFlavorSm" onchange="updateTotal()">
+                                                                    <option value="Pick a Flavor">Pick a flavor...</option>
+                                                                    <option value="Root Beer">Root Beer</option>
+                                                                    <option value="Creamsicle">Creamsicle</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <input id="smFloatQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                            </td>
+                                                            <td>
+                                                                <select class="custom-select" name="floatAddOnsSm" id="floatAddOnsSm" onchange="updateTotal()">
+                                                                    <option id="addOnsSmFlt" value="0">Optional Add-ons</option>
+                                                                    <option id="xThickSmFlt" value="0.6">Extra Thick ($0.60)</option>
+                                                                    <option id="xFlavorSmFlt" value="0.5">Extra Flavor ($0.50)</option>
+                                                                    <option  id="xTkXFlSmFlt" value="1.1">Extra Thick + Extra Flavor ($1.10)</option>
+                                                                </select>
+                                                            </td>
+                                                            <td id="smFloatSubtotal" class="align-middle">$0.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-middle">Medium Float</td>
+                                                            <td class="align-middle">$3.50</td>
+                                                            <td>
+                                                                <select class="custom-select" name="floatFlavorsMd" id="floatFlavorMd" onchange="updateTotal()">
+                                                                    <option value="Pick a Flavor">Pick a flavor...</option>
+                                                                    <option value="Root Beer">Root Beer</option>
+                                                                    <option value="Creamsicle">Creamsicle</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <input id="mdFloatQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                            </td>
+                                                            <td>
+                                                                <select class="custom-select" name="floatAddOnsMd" id="floatAddOnsMd" onchange="updateTotal()">
+                                                                    <option id="addOnsMdFlt" value="0">Optional Add-ons</option>
+                                                                    <option id="xThickMdFlt" value="0.6">Extra Thick ($0.60)</option>
+                                                                    <option id="xFlavorMdFlt" value="0.5">Extra Flavor ($0.50)</option>
+                                                                    <option  id="xTkXFlMdFlt" value="1.1">Extra Thick + Extra Flavor ($1.10)</option>
+                                                                </select>
+                                                            </td>
+                                                            <td id="mdFloatSubtotal" class="align-middle">$0.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-middle">Large Float</td>
+                                                            <td class="align-middle">$5.00</td>
+                                                            <td>
+                                                                <select class="custom-select" name="floatFlavorsLg" id="floatFlavorLg" onchange="updateTotal()">
+                                                                    <option value="Pick a Flavor">Pick a flavor...</option>
+                                                                    <option value="Root Beer">Root Beer</option>
+                                                                    <option value="Creamsicle">Creamsicle</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <input id="lgFloatQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                            </td>
+                                                            <td>
+                                                                <select class="custom-select" name="floatAddOnsLg" id="floatAddOnsLg" onchange="updateTotal()">
+                                                                    <option id="addOnsLgFlt" value="0">Optional Add-ons</option>
+                                                                    <option id="xThickLgFlt" value="1.3">Extra Thick ($1.20)</option>
+                                                                    <option id="xFlavorLgFlt" value="1">Extra Flavor ($1.00)</option>
+                                                                    <option  id="xTkXFlLgFlt" value="2.2">Extra Thick + Extra Flavor ($2.20)</option>
+                                                                </select>
+                                                            </td>
+                                                            <td id="lgFloatSubtotal" class="align-middle">$0.00</td>
+                                                        </tr>      
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="6">
+                                                                Small = 16 oz | Medium = 20 oz | Large = 32oz
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
                                             </div>
                                             <div class="col col-lg-4 d-none d-lg-block">
                                                 <img src="images/putz-shake.jpeg" alt="milkshakes" class="img-thumbnail">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="shakeQty" class="col-2 col-lg-1 col-form-label">Qty:</label>
-                                            <div class="col-4 col-lg-1">
-                                                <input class="form-control" type="text" id="shakeQty" name="shakeQty" placeholder="0">
-                                            </div>
-                                            <div class="col-6 offset-lg-2">
-                                                <button class="btn btn-danger">Add to order</button>
                                             </div>
                                         </div>
                                     </form>
@@ -290,47 +508,69 @@
                         </h2>
                       </div>
                       <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
+                        <div class="card-body order-form-card-body">
                             <div class="col-12">
                                 <form action="">
                                     <div class="form-group row">
-                                        <div class="col-12 col-md-6 col-lg-4">
-                                            <label for="sundaeSmall" class="orderFormAccLabels col-form-label col-12">Size</label>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="sundaeSmall" name="sundaeSizeRadios" value="small sundae">
-                                                <label for="sundaeSmall" class="form-check-label">Small ($2.60)</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="sundaeMedium" name="sundaeSizeRadios" value="medium sundae">
-                                                <label for="sundaeMedium" class="form-check-label">Medium ($3.00)</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="sundaeLarge" name="sundaeSizeRadios" value="large sundae">
-                                                <label for="sundaeLarge" class="form-check-label">Large ($3.50)</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-4">
-                                            <label for="extraThickSmMd" class="orderFormAccLabels col-form-label col-12">Add-Ons</label>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="extraThickSmMdSundae" name="addOnCheckboxes" value="extra thick">
-                                                <label for="extraThickSmMdSundae" class="form-check-label">Extra Thick (Small/Medium) (+ $0.60)</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="extraThickLgSundae" name="addOnCheckboxes" value="extra thick">
-                                                <label for="extraThickLgSundae class="form-check-label">Extra Thick (Large) (+ $1.20)</label>
-                                            </div>
+                                        <div class="col-12 col-lg-8 order-form-table">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Size:</th>
+                                                        <th>Price:</th>
+                                                        <th id="qty-col">Qty:</th>
+                                                        <th>Add-ons:</th>
+                                                        <th>Subtotal:</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="align-middle">Small Sundae</td>
+                                                        <td class="align-middle">$2.60</td>
+                                                        <td>
+                                                            <input id="smSundaeQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td>
+                                                            <select class="custom-select" name="sundaeAddOnsSm" id="sundaeAddOnsSm" onchange="updateTotal()">
+                                                                <option id="addOnsSmSdy" value="0">Optional Add-ons</option>
+                                                                <option id="xThickSmSdy" value="0.6">Extra Thick ($0.60)</option>
+                                                            </select>
+                                                        </td>
+                                                        <td id="smSundaeSubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-middle">Medium Sundae</td>
+                                                        <td class="align-middle">$3.00</td>
+                                                        <td>
+                                                            <input id="mdSundaeQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td>
+                                                            <select class="custom-select" name="sundaeAddOnsMd" id="sundaeAddOnsMd" onchange="updateTotal()">
+                                                                <option id="addOnsMdSdy" value="0">Optional Add-ons</option>
+                                                                <option id="xThickMd" value="0.6">Extra Thick ($0.60)</option>
+                                                            </select>
+                                                        </td>
+                                                        <td id="mdSundaeSubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-middle">Large Sundae</td>
+                                                        <td class="align-middle">$3.50</td>
+                                                        <td>
+                                                            <input id="lgSundaeQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td>
+                                                            <select class="custom-select" name="sundaeAddOnsLg" id="sundaeAddOnsLg" onchange="updateTotal()">
+                                                                <option id="addOnsLgSdy" value="0">Optional Add-ons</option>
+                                                                <option id="xThickLg" value="1.2">Extra Thick ($1.20)</option>
+                                                            </select>
+                                                        </td>
+                                                        <td id="lgSundaeSubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                         <div class="col col-lg-4 d-none d-lg-block">
                                             <img src="images/putz-sundae.jpeg" alt="sundae" class="img-thumbnail">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="sundaeQty" class="col-2 col-lg-1 col-form-label">Qty:</label>
-                                        <div class="col-4 col-lg-1">
-                                            <input class="form-control" type="text" id="sundaeQty" name="sundaeQty" placeholder="0">
-                                        </div>
-                                        <div class="col-6 offset-lg-2">
-                                            <button class="btn btn-danger">Add to order</button>
                                         </div>
                                     </div>
                                 </form>
@@ -349,89 +589,138 @@
                           </h2>
                         </div>
                         <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                          <div class="card-body">
+                          <div class="card-body order-form-card-body">
                               <div class="col-12">
                                   <form action="">
                                       <div class="form-group row">
-                                          <div class="col-12 col-md-6 col-lg-4">
-                                              <div class="form-check">
-                                                  <input class="form-check-input" type="radio" id="flHotDog" name="foodItems" value="small sundae">
-                                                  <label for="flHotDog" class="form-check-label">Foot Long Hot Dog 
-                                                    ($2.60)
-                                                    </label>
-                                              </div>
-                                              <div class="form-check">
-                                                  <input class="form-check-input" type="radio" id="flHotDogKraut" name="foodItems" value="medium sundae">
-                                                  <label for="flHotDogKraut" class="form-check-label">Foot Long Hot Dog 
-                                                    w/ Kraut ($3.40)</label>
-                                              </div>
-                                              <div class="form-check">
-                                                  <input class="form-check-input" type="radio" id="flConey" name="foodItems" value="large sundae">
-                                                  <label for="flConey" class="form-check-label">Foot Long Coney 
-                                                    ($3.40)</label>
-                                              </div>
-                                              <div class="form-check">
-                                                  <input class="form-check-input" type="radio" id="flConeyCheese" name="foodItems" value="large sundae">
-                                                  <label for="flConeyCheese" class="form-check-label">Foot Long Coney 
-                                                    w/ Cheese ($4.10)</label>
-                                              </div>
-                                              <div class="form-check">
-                                                  <input class="form-check-input" type="radio" id="hotDog" name="foodItems" value="large sundae">
-                                                  <label for="hotDog" class="form-check-label">Hot Dog ($2.10)</label>
-                                              </div>
-                                              <div class="form-check">
-                                                  <input class="form-check-input" type="radio" id="hotDogKraut" name="foodItems" value="large sundae">
-                                                  <label for="hotDogKraut" class="form-check-label">Hot Dog w/ Kraut
-                                                    ($2.50)</label>
-                                              </div>
-                                              <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="smallConey" name="foodItems" value="large sundae">
-                                                <label for="smallConey" class="form-check-label">Small Coney ($2.50)</label>
-                                              </div>
-                                              <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="small" name="foodItems" value="large sundae">
-                                                <label for="small" class="form-check-label">Small Coney w/
-                                                    Cheese ($2.90)</label>
-                                              </div>
-                                          </div>
-                                          <div class="col-12 col-md-6 col-lg-4">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="flHotDog" name="foodItems" value="small sundae">
-                                                <label for="flHotDog" class="form-check-label">Mett (Hot) ($2.50)
-                                                  </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="flHotDogKraut" name="foodItems" value="medium sundae">
-                                                <label for="flHotDogKraut" class="form-check-label">Mett (Mild) ($2.50)</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="flConey" name="foodItems" value="large sundae">
-                                                <label for="flConey" class="form-check-label">Mett w/ Kraut ($2.90)</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="flConeyCheese" name="foodItems" value="large sundae">
-                                                <label for="flConeyCheese" class="form-check-label">Mett Coney w/ Cheese ($3.30)</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="hotDog" name="foodItems" value="large sundae">
-                                                <label for="hotDog" class="form-check-label">Walking Taco ($2.90)</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="hotDogKraut" name="foodItems" value="large sundae">
-                                                <label for="hotDogKraut" class="form-check-label">Hamburger ($3.00)</label>
-                                            </div>
-                                          </div>
+                                        <div class="col-12 col-lg-8 order-form-table">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Size:</th>
+                                                        <th>Price:</th>
+                                                        <th id="qty-col">Qty:</th>
+                                                        <th>Add-ons:</th>
+                                                        <th>Subtotal:</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="align-middle">Foot Long Hot Dog</td>
+                                                        <td class="align-middle">$2.60</td>
+                                                        <td>
+                                                            <input id="footLongQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td>
+                                                            <select class="custom-select" name="footLongAddOns" id="footLongAddOns" onchange="updateTotal()">
+                                                                <option id="addOnsFootLong" value="0">Optional Add-ons</option>
+                                                                <option id="addKrautFootLong" value="0.8">Add Kraut ($0.80)</option>
+                                                            </select>
+                                                        </td>
+                                                        <td id="footLongSubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-middle">Foot Long Coney</td>
+                                                        <td class="align-middle">$3.40</td>
+                                                        <td>
+                                                            <input id="coneyQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td>
+                                                            <select class="custom-select" name="coneyAddOns" id="coneyAddOns" onchange="updateTotal()">
+                                                                <option id="addOnsConey" value="0">Optional Add-ons</option>
+                                                                <option id="addChz" value="0.7">Add Cheese ($0.70)</option>
+                                                            </select>
+                                                        </td>
+                                                        <td id="coneySubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-middle">Hot Dog</td>
+                                                        <td class="align-middle">$2.10</td>
+                                                        <td>
+                                                            <input id="hotDogQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td>
+                                                            <select class="custom-select" name="hotDogAddOns" id="hotDogAddOns" onchange="updateTotal()">
+                                                                <option id="addOnsHotDog" value="0">Optional Add-ons</option>
+                                                                <option id="addKrautHotDog" value="0.4">Add Kraut ($0.40)</option>
+                                                            </select>
+                                                        </td>
+                                                        <td id="hotDogSubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-middle">Small Coney</td>
+                                                        <td class="align-middle">$2.50</td>
+                                                        <td>
+                                                            <input id="smallConeyQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td>
+                                                            <select class="custom-select" name="smallConeyAddOns" id="smallConeyAddOns" onchange="updateTotal()">
+                                                                <option id="addOnsSmallConey" value="0">Optional Add-ons</option>
+                                                                <option id="addCheeseSmallConey" value="0.4">Add Cheese ($0.40)</option>
+                                                            </select>
+                                                        </td>
+                                                        <td id="smallConeySubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-middle">Mett (Hot)</td>
+                                                        <td class="align-middle">$2.50</td>
+                                                        <td>
+                                                            <input id="mettHotQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td>
+                                                            <select class="custom-select" name="mettHotAddOns" id="mettHotAddOns" onchange="updateTotal()">
+                                                                <option id="addOnsMettHot" value="0">Optional Add-ons</option>
+                                                                <option id="addKrautMettHot" value="0.4">Add Kraut ($0.40)</option>
+                                                            </select>
+                                                        </td>
+                                                        <td id="mettHotSubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-middle">Mett (Mild)</td>
+                                                        <td class="align-middle">$2.50</td>
+                                                        <td>
+                                                            <input id="mettMildQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td>
+                                                            <select class="custom-select" name="mettMildAddOns" id="mettMildAddOns" onchange="updateTotal()">
+                                                                <option id="addOnsMettMild" value="0">Optional Add-ons</option>
+                                                                <option id="addKrautMettMild" value="0.4">Add Kraut ($0.40)</option>
+                                                            </select>
+                                                        </td>
+                                                        <td id="mettMildSubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-middle">Mett Coney w/ Cheese</td>
+                                                        <td class="align-middle">$3.30</td>
+                                                        <td>
+                                                            <input id="mettConeyQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td class="na align-middle">N/A</td>
+                                                        <td id="mettConeySubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-middle">Walking Taco</td>
+                                                        <td class="align-middle">$2.90</td>
+                                                        <td>
+                                                            <input id="wkgTacoQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td class="na align-middle">N/A</td>
+                                                        <td id="wkgTacoSubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="align-middle">Hamburger</td>
+                                                        <td class="align-middle">$3.00</td>
+                                                        <td>
+                                                            <input id="hamburgerQty" type="number" placeholder="0" onchange="updateTotal()">
+                                                        </td>
+                                                        <td class="na align-middle">N/A</td>
+                                                        <td id="hamburgerSubtotal" class="align-middle">$0.00</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                           <div class="col col-lg-4 d-none d-lg-block">
                                               <img src="images/putz-cheese-coney.jpeg" alt="sundae" class="img-thumbnail">
-                                          </div>
-                                      </div>
-                                      <div class="form-group row">
-                                          <label for="sundaeQty" class="col-2 col-lg-1 col-form-label">Qty:</label>
-                                          <div class="col-4 col-lg-1">
-                                              <input class="form-control" type="text" id="sundaeQty" name="sundaeQty" placeholder="0">
-                                          </div>
-                                          <div class="col-6 offset-lg-2">
-                                              <button class="btn btn-danger">Add to order</button>
                                           </div>
                                       </div>
                                   </form>
@@ -447,8 +736,35 @@
             <div class="col-12">
                 <form action="">
                     <div class="form-group row">
+                        <table class="table orderTotalTable">
+                            <tr>
+                                <td colspan="2" id="order-table-header">
+                                    <h4 style="color: #1C95DE;">Your Order</h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ice Cream Total:</td>
+                                <td id="iceCreamTotal" onchange="updateOrderSubtotal()">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td>Malts/Shakes/Floats Total:</td>
+                                <td id="maltsShakesTotal" onchange="updateOrderSubtotal()">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td>Sundaes Total:</td>
+                                <td id="sundaesTotal"  onchange="updateOrderSubtotal()">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td>Food Items Total:</td>
+                                <td  id="foodItemsTotal" onchange="updateOrderSubtotal()">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td id="grandTotalType">Grand Total:</td>
+                                <td id="grandTotal" onchange="updateOrderSubtotal()">$0.00</td>
+                            </tr>
+                        </table>
                         <div class="col" id="submitButton">
-                            <button class="btn btn-danger">Submit Order</button>
+                            <button class="btn btn-danger" id="submitButtonClick">Submit Order</button>
                         </div>
                     </div>
                 </form>

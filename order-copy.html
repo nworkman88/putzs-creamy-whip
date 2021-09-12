@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Required meta tags always come first -->
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+     <!-- Additional CSS must be placed after Bootstrap CSS -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Sacramento&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="css/styles.css" />
+     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+
+    <title>Putz's Creamy Whip</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-md navbar-light sticky-top">
+        <div class="container" id="navbarContainer">
+            <a class="navbar-brand" href="#">
+                <img class="d-block d-lg-none" src="images/putz_logo_sm_plus.png" alt="Putz's Creamy Whip logo">
+                <img class="d-none d-lg-block" src="images/putz_logo_lg_plus.png" alt="Putz's Creamy Whip logo">
+
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nucampNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nucampNavbar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active"><a class="nav-link" href="index.html">
+                        Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html">
+                        Our Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Order Online</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Order Form-->
+    <div class="container" id="orderFormContainer">
+        <div class="row row-content">
+            <div class="col-12">
+                <h1>Order Ahead!</h1>
+                <hr>
+            </div>
+            <div class="col-12">
+                <form action="">
+                    <div class="form-group row">
+                        <label for="firstName" class="col-md-2 col-form-label">First Name:</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" id="firstName" name="firstName" placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="lastName" class="col-md-2 col-form-label">Last Name:</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="areaCode" class="col-md-2 col-form-label">Phone:</label>
+                        <div class="col-5 col-md-3">
+                            <input class="form-control" type="tel" id="areaCode" name="areaCode" placeholder="Area Code">
+                        </div>
+                        <div class="col-7">
+                            <input class="form-control" type="tel" id="telNum" name="telNum" placeholder="Tel. number">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-md-2 col-form-label">Email:</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="email" id="email" name="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col offset-md-2">
+                            <label for="phone"><strong>Preferred Contact Method:</strong></label>
+                            <div class="form-check form-check-inline offset-md-1">
+                                <input class="form-check-input" type="radio" id="contactYes" name="contactRadios" value="phone">
+                                <label for="phone" class="form-check-label">Phone</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="contactNo" name="contactRadios" value="email">
+                                <label for="email" class="form-check-label">Email</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row row-content">
+            <div class="col-12">
+                <div class="accordion" id="accordionExample">
+                    <div class="orderCard card">
+                      <div class="card-header">
+                        <h2>
+                          <button class="orderCollapseBtn btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="iceCream">
+                            Ice Cream
+                            <i class="fa fa-angle-down"></i>
+                          </button>
+                        </h2>
+                      </div>
+                      <div id="collapseOne" class="collapse show" aria-labelledby="iceCream" data-parent="#accordionExample">
+                        <div class="card-body">
+                          <div class="col-12">
+                                <form action="">
+                                    <div class="form-group row">
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <label for="shakeSmall" class="orderFormAccLabels col-form-label col-12">Step 1: Pick Your Size</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="coneSmall" name="coneSizeRadios" value="Small" data-price="2" onchange="updateTotal()">
+                                                <label for="coneSmall" class="form-check-label">Small ($2.00)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="coneMedium" name="coneSizeRadios" value="Medium" data-price="2.5" onchange="updateTotal()">
+                                                <label for="coneMedium" class="form-check-label">Medium ($2.50)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="coneLarge" name="coneSizeRadios" value="Large" data-price="3" onchange="updateTotal()">
+                                                <label for="coneLarge" class="form-check-label">Large ($3.00)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="waffleReg" name="coneSizeRadios" value="Regular Waffle" data-price="3.20" onchange="updateTotal()">
+                                                <label for="waffleReg" class="form-check-label">Regular Waffle ($3.20)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="waffleLarge" name="coneSizeRadios" value="Large Waffle" data-price="3.80" onchange="updateTotal()">
+                                                <label for="waffleLarge" class="form-check-label">Large Waffle ($3.80)</label>
+                                            </div>
+                                            <input type="hidden" name="price">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4" id="coneFlavors">
+                                            <label for="coneChoc" class="orderFormAccLabels col-form-label col-12">Flavor</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="coneChoc" name="coneFlavorRadios" value="Chocolate">
+                                                <label for="coneChoc" class="form-check-label">Chocolate</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="coneVanilla" name="coneFlavorRadios" value="Vanilla">
+                                                <label for="coneVanilla" class="form-check-label">Vanilla</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="coneTwist" name="coneFlavorRadios" value="Chocolate/Vanilla Twist">
+                                                <label for="coneTwist" class="form-check-label">Chocolate/Vanilla Twist</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="coneBlueRas" name="coneFlavorRadios" value="Blue Raspberry">
+                                                <label for="coneBlueRas" class="form-check-label">Blue Raspberry</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="flavOfWeek" name="coneFlavorRadios" value="Flavor of the Week">
+                                                <label for="flavOfWeek" class="form-check-label">Flavor of the Week (Check social media for updates!)</label>
+                                            </div>
+                                        </div>
+                                        <div class="col col-lg-4 d-none d-lg-block">
+                                            <img src="images/putz-blue-softserve.jpg" alt="blue soft serve" class="img-thumbnail">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" id="coneQty">
+                                        <label for="coneQty" class="col-2 col-lg-1 col-form-label">Qty:</label>
+                                        <div class="col-4 col-lg-1">
+                                            <input class="form-control" type="number" id="coneQty" name="coneQty" placeholder="0">
+                                        </div>
+                                        <div class="col-6 offset-lg-2">
+                                            <button class="btn btn-danger" id="addConeToOrder" type="submit">Add to order</button>
+                                        </div>
+                                    </div>
+                                </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="orderCard card">
+                        <div class="card-header">
+                            <h2>
+                              <button class="orderCollapseBtn btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="shakesAndMalts">
+                                Malts/Shakes/Sodas/Floats
+                                <i class="fa fa-angle-down"></i>
+                              </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="shakesAndMalts" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="col-12">
+                                    <form action="">
+                                        <div class="form-group row">
+                                            <div class="col-12 col-md-6 col-lg-4">
+                                                <label for="shakeSmall" class="orderFormAccLabels col-form-label col-12">Size</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="shakeSmall" name="shakeSizeRadios" value="small shake">
+                                                    <label for="shakeSmall" class="form-check-label">Small - 16oz ($3.00)</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="shakeMedium" name="shakeSizeRadios" value="medium shake">
+                                                    <label for="shakeMedium" class="form-check-label">Medium - 20oz ($3.50)</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="shakeLarge" name="shakeSizeRadios" value="large shake">
+                                                    <label for="shakeLarge" class="form-check-label">Large - 32oz ($5.00)</label>
+                                                </div>
+                                                <label for="shakeChoc" class="orderFormAccLabels col-form-label col-12">Flavor</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="shakeChoc" name="shakeFlavorRadios" value="chocolate shake">
+                                                    <label for="shakeChoc" class="form-check-label">Chocolate Shake</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="shakeVanilla" name="shakeFlavorRadios" value="vanilla shake">
+                                                    <label for="shakeVanilla" class="form-check-label">Vanilla Shake</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="chocMalt" name="shakeFlavorRadios" value="choc malt">
+                                                    <label for="shakeTwist" class="form-check-label">Chocolate Malt</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="vanillaMalt" name="shakeFlavorRadios" value="vanilla malt">
+                                                    <label for="vanillaMalt" class="form-check-label">Vanilla Malt</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="rootBeerFloat" name="shakeFlavorRadios" value="root beer float">
+                                                    <label for="rootBeerFloat" class="form-check-label">Root Beer Float</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="creamsicleFloat" name="shakeFlavorRadios" value="creamsicle float">
+                                                    <label for="creamsicleFloat" class="form-check-label">Creamsicle Float</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-4">
+                                                <label for="extraThickSmMd" class="orderFormAccLabels col-form-label col-12">Add-Ons</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="extraThickSmMd" name="addOnCheckboxes" value="extra thick">
+                                                    <label for="shakeSmall" class="form-check-label">Extra Thick (Small/Medium) (+ $0.60)</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="extraThickLg" name="addOnCheckboxes" value="extra thick">
+                                                    <label for="extraThickLg" class="form-check-label">Extra Thick (Large) (+ $1.20)</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="extraMaltSmMd" name="addOnCheckboxes" value="extra malt">
+                                                    <label for="extraMaltSmMd" class="form-check-label">Extra Malt (Small/Medium) (+ $0.50)</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="extraMaltLg" name="addOnCheckboxes" value="extra malt">
+                                                    <label for="extraMaltLg" class="form-check-label">Extra Malt (Large) (+ $1.00)</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="extraFlavorSmMd" name="addOnCheckboxes" value="extra flavor">
+                                                    <label for="extraFlavorSmMd" class="form-check-label">Extra Flavor (Small/Medium) (+ $0.50)</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="extraFlavorLg" name="addOnCheckboxes" value="extra flavor">
+                                                    <label for="extraFlavorLg" class="form-check-label">Extra Flavor (Large) (+ $1.00)</label>
+                                                </div>
+
+                                            </div>
+                                            <div class="col col-lg-4 d-none d-lg-block">
+                                                <img src="images/putz-shake.jpeg" alt="milkshakes" class="img-thumbnail">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="shakeQty" class="col-2 col-lg-1 col-form-label">Qty:</label>
+                                            <div class="col-4 col-lg-1">
+                                                <input class="form-control" type="text" id="shakeQty" name="shakeQty" placeholder="0">
+                                            </div>
+                                            <div class="col-6 offset-lg-2">
+                                                <button class="btn btn-danger">Add to order</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orderCard card">
+                      <div class="card-header">
+                        <h2 class="mb-0">
+                          <button class="orderCollapseBtn btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="sundaes">
+                            Sundaes
+                                <i class="fa fa-angle-down"></i>
+                          </button>
+                        </h2>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="col-12">
+                                <form action="">
+                                    <div class="form-group row">
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <label for="sundaeSmall" class="orderFormAccLabels col-form-label col-12">Size</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="sundaeSmall" name="sundaeSizeRadios" value="small sundae">
+                                                <label for="sundaeSmall" class="form-check-label">Small (<span class="item-price">$2.60</span>)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="sundaeMedium" name="sundaeSizeRadios" value="medium sundae">
+                                                <label for="sundaeMedium" class="form-check-label">Medium (<span class="item-price">$3.00</span>)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="sundaeLarge" name="sundaeSizeRadios" value="large sundae">
+                                                <label for="sundaeLarge" class="form-check-label">Large (<span class="item-price">$3.50</span>)</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <label for="extraThickSmMd" class="orderFormAccLabels col-form-label col-12">Add-Ons</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="extraThickSmMdSundae" name="addOnCheckboxes" value="extra thick">
+                                                <label for="extraThickSmMdSundae" class="form-check-label">Extra Thick (Small/Medium) (+ $0.60)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="extraThickLgSundae" name="addOnCheckboxes" value="extra thick">
+                                                <label for="extraThickLgSundae class="form-check-label">Extra Thick (Large) (+ $1.20)</label>
+                                            </div>
+                                        </div>
+                                        <div class="col col-lg-4 d-none d-lg-block">
+                                            <img src="images/putz-sundae.jpeg" alt="sundae" class="img-thumbnail">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="sundaeQty" class="col-2 col-lg-1 col-form-label">Qty:</label>
+                                        <div class="col-4 col-lg-1">
+                                            <input class="form-control" type="text" id="sundaeQty" name="sundaeQty" placeholder="0">
+                                        </div>
+                                        <div class="col-6 offset-lg-2">
+                                            <button class="btn btn-danger">Add to order</button>
+                                        </div>
+                                    </div>
+                                </form>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="orderCard card">
+                        <div class="card-header">
+                          <h2 class="mb-0">
+                            <button class="orderCollapseBtn btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="food">
+                              Food Items
+                                  <i class="fa fa-angle-down"></i>
+                            </button>
+                          </h2>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                          <div class="card-body">
+                              <div class="col-12">
+                                  <form action="">
+                                      <div class="form-group row">
+                                          <div class="col-12 col-md-6 col-lg-4">
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="radio" id="flHotDog" name="foodItems" value="small sundae">
+                                                  <label for="flHotDog" class="form-check-label">Foot Long Hot Dog
+                                                    ($2.60)
+                                                    </label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="radio" id="flHotDogKraut" name="foodItems" value="medium sundae">
+                                                  <label for="flHotDogKraut" class="form-check-label">Foot Long Hot Dog
+                                                    w/ Kraut ($3.40)</label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="radio" id="flConey" name="foodItems" value="large sundae">
+                                                  <label for="flConey" class="form-check-label">Foot Long Coney
+                                                    ($3.40)</label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="radio" id="flConeyCheese" name="foodItems" value="large sundae">
+                                                  <label for="flConeyCheese" class="form-check-label">Foot Long Coney
+                                                    w/ Cheese ($4.10)</label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="radio" id="hotDog" name="foodItems" value="large sundae">
+                                                  <label for="hotDog" class="form-check-label">Hot Dog ($2.10)</label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" type="radio" id="hotDogKraut" name="foodItems" value="large sundae">
+                                                  <label for="hotDogKraut" class="form-check-label">Hot Dog w/ Kraut
+                                                    ($2.50)</label>
+                                              </div>
+                                              <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="smallConey" name="foodItems" value="large sundae">
+                                                <label for="smallConey" class="form-check-label">Small Coney ($2.50)</label>
+                                              </div>
+                                              <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="small" name="foodItems" value="large sundae">
+                                                <label for="small" class="form-check-label">Small Coney w/
+                                                    Cheese ($2.90)</label>
+                                              </div>
+                                          </div>
+                                          <div class="col-12 col-md-6 col-lg-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="flHotDog" name="foodItems" value="small sundae">
+                                                <label for="flHotDog" class="form-check-label">Mett (Hot) ($2.50)
+                                                  </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="flHotDogKraut" name="foodItems" value="medium sundae">
+                                                <label for="flHotDogKraut" class="form-check-label">Mett (Mild) ($2.50)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="flConey" name="foodItems" value="large sundae">
+                                                <label for="flConey" class="form-check-label">Mett w/ Kraut ($2.90)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="flConeyCheese" name="foodItems" value="large sundae">
+                                                <label for="flConeyCheese" class="form-check-label">Mett Coney w/ Cheese ($3.30)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="hotDog" name="foodItems" value="large sundae">
+                                                <label for="hotDog" class="form-check-label">Walking Taco ($2.90)</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" id="hotDogKraut" name="foodItems" value="large sundae">
+                                                <label for="hotDogKraut" class="form-check-label">Hamburger ($3.00)</label>
+                                            </div>
+                                          </div>
+                                          <div class="col col-lg-4 d-none d-lg-block">
+                                              <img src="images/putz-cheese-coney.jpeg" alt="sundae" class="img-thumbnail">
+                                          </div>
+                                      </div>
+                                      <div class="form-group row">
+                                          <label for="sundaeQty" class="col-2 col-lg-1 col-form-label">Qty:</label>
+                                          <div class="col-4 col-lg-1">
+                                              <input class="form-control" type="text" id="sundaeQty" name="sundaeQty" placeholder="0">
+                                          </div>
+                                          <div class="col-6 offset-lg-2">
+                                              <button class="btn btn-danger">Add to order</button>
+                                          </div>
+                                      </div>
+                                  </form>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-content">
+            <div class="col-12">
+                <h3>Your Order</h3>
+                <table class="table">
+                    <tr>
+                        <th colspan="4">Ice Cream Cones</th>
+                    </tr>
+                        <td>Size:</td>
+                        <td>Flavor:</td>
+                        <td>Qty:</td>
+                        <td>Price:</td>
+                        <td></td>
+                    </tr>
+                    <tr id="cone-sm-row">
+                        <td id="cone-sm-cell"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-12">
+                <form action="">
+                    <div class="form-group row">
+                        <div class="col" id="submitButton">
+                            <button class="btn btn-danger">Submit Order</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="site-footer">
+        <div class="container" id="footerContainer">
+            <div class="row">
+                <div class="col">
+                    <img src="images/putz_footer_logo.png" id = "footer-logo" alt="Putz's Creamy Whip">
+                    <p></p>
+                    <p>&copy;2021 Putz's Creamy Whip</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="scripts/scripts-1.js"></script>
+</body>
+</html>
